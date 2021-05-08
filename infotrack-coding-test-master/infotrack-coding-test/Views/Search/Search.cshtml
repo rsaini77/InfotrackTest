@@ -1,0 +1,15 @@
+@model infotrack_coding_test.Models.SearchViewModel
+
+    <form id="search-form" method="POST" asp-action="/Search">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <label><input asp-for="SearchEngineType" type="radio" value="Google" /> Google</label>
+        <span asp-validation-for="SearchEngineType" class="text-danger"></span>
+        <label><input asp-for="SearchEngineType" type="radio" value="Bing" /> Bing</label>
+        <span asp-validation-for="SearchEngineType" class="text-danger"></span>
+        <input asp-for="SearchUrl" class="form-control" placeholder="URL to Search For" />
+        <span asp-validation-for="SearchUrl" class="text-danger"></span>
+        <input asp-for="Keywords" class="form-control" placeholder="Keywords For Search" />
+        <span asp-validation-for="Keywords" class="text-danger"></span>
+        <div></div>
+        <button type="submit" class="btn btn-primary full-width">Check Search Results</button>
+    </form>

@@ -1,0 +1,50 @@
+@model infotrack_coding_test.Models.ResultsViewModel
+
+<label><input asp-for="SearchEngineType" type="radio" value="Google" /> Google</label>
+<span asp-validation-for="SearchEngineType" class="text-danger"></span>
+<label><input asp-for="SearchEngineType" type="radio" value="Bing" /> Bing</label>
+<span asp-validation-for="SearchEngineType" class="text-danger"></span>
+<input asp-for="SearchUrl" class="form-control" placeholder="URL to Search For" />
+<span asp-validation-for="SearchUrl" class="text-danger"></span>
+
+
+<input asp-for="Keywords" class="form-control" placeholder="Keywords For Search" />
+<span asp-validation-for="Keywords" class="text-danger"></span>
+<div></div>
+<div class="row">
+    <div class="col-md-12">
+        <a href="/" type="submit" class="btn btn-primary full-width">Perform Another Search</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        @if (Model.SearchPositions.Any())
+        {
+            <table class="full-width table-centered">
+                <thead>
+                    <tr>
+                        <th>
+                            <label class="control-label">Position in Search Results</label>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var position in Model.SearchPositions)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => position)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div>
+                <p>There are no results to display</p>
+            </div>
+        }
+    </div>
+</div>

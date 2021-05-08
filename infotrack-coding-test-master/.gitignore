@@ -1,0 +1,7 @@
+infotrack-coding-test/obj/*
+infotrack-coding-test/bin/*
+infotrack-coding-test.tests/obj/*
+infotrack-coding-test.tests/bin/*
+.vscode/*
+infotrack-coding-test/.DS_Store
+infotrack-coding-test.tests/.DS_Store
